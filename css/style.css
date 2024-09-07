@@ -1,0 +1,726 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+.navBtn{
+    width: 55px;
+    height: 55px;
+    background-color: #2a2828;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1 ;
+    color: #fff;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+
+}
+
+
+.navBtn .slider {
+    width: 100px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 15px;
+    font-size: 40px;
+    position: relative;
+    left: 22px;
+    transition: all 0.5s ease;
+}
+
+.navBtn .slider.open{
+    left: -24px;
+}
+
+.container{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    position: fixed;
+    width: 250px;
+    background-color: rgb(40, 39, 39);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 15px;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    bottom: 0;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+header.open{
+    left: 0
+}
+
+.avatarandscl{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.avatarBlock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.avatarBlock .imgBlock{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #ccc;
+}
+
+.avatarBlock .imgBlock>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+ .avatarBlock > h2{
+text-align: center;
+color: #fff;
+}
+
+ .scl{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.scl > a{
+font-size: 20px;
+text-decoration: none;
+color: #fff;
+transition: all 0.5s;
+width: 30px;
+height: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+}
+
+
+.scl > a:hover{
+    background-color: #fff;
+     color: #000;
+     transform: scale(1.1);
+}
+
+nav{
+    height: 100%;
+    display: flex;
+justify-content: center;
+align-items: flex-start;
+gap: 35px;
+padding: 15px;
+}
+
+nav>ul{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+}
+
+
+nav>ul>li{
+display: flex;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+}
+
+
+nav>ul>li>a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+    transition: all 0.5s ease;
+    font-weight: bold;
+    position: relative;
+    padding: 2px;
+}
+
+nav>ul>li>a.active{
+    background-color: #fff;
+    color: #000;
+}
+
+nav>ul>li>a::before{
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #000;
+    transition: all 0.5s ease;
+}
+
+nav>ul>li>a.active::before{
+    width: 100%;
+}
+
+.toggleBlock{
+width: 100%;
+height: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.toggleBlock .toggle{
+    width: 75px;
+    height: 30px;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+ 
+.toggleBlock .toggle .circle{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    transition: all 0.5s cubic-bezier(.86,-0.42,.69,1.48);
+    left: 8%;
+}
+
+.toggleBlock .toggle .circle.light{
+    left: 65%; 
+}
+
+main{
+    width: 83%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+    transform: translateX(20%);
+    position: relative;
+}
+
+
+main > section{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+
+main > section:nth-child(1)>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+main > section:nth-child(1) .content{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #fff;
+}
+
+main > section:nth-child(2){
+    height: 500px;
+    flex-direction: column;
+    gap: 15px;
+}
+
+main > section:nth-child(2) .contentBlocks{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+main > section:nth-child(2) .contentBlocks .imgBlock{
+width: 400px;
+height: 400px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+main > section:nth-child(2) .contentBlocks .imgBlock>img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+}
+
+
+main > section:nth-child(2) .headerBlock{
+    width: 100%;
+padding: 15px;
+}
+main > section:nth-child(2) .headerBlock>h2{
+    position: relative;
+}
+main > section:nth-child(2) .headerBlock>h2::before{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width: 4%;
+    height: 5px;
+    background-color: aquamarine;
+}
+
+main > section:nth-child(2) .contentBlocks .contents{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+main > section:nth-child(2) .contentBlocks .contents>h2{
+    text-align: left;
+    width: 100%;
+      padding: 15px;
+}
+
+main > section:nth-child(2) .contentBlocks .contents .twiceBlock{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+main > section:nth-child(2) .contentBlocks .contents .twiceBlock .block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    line-height: 35px;
+    height: auto;
+}
+
+main > section:nth-child(2) .contentBlocks .contents .twiceBlock .block>ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+main > section:nth-child(2) .contentBlocks .contents .twiceBlock .block>ul>li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+main > section:nth-child(2) .contentBlocks .contents .twiceBlock .block>ul>li>a{
+    color: #000;
+    text-decoration: none;
+}
+
+main > section:nth-child(2) .contentBlocks .contents .twiceBlock .block>ul>li>a:hover{
+    color: #f00;
+}
+
+main > section:nth-child(3){
+    height: 700px;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 25px;
+    background-color: #f4fafd;
+}
+
+main > section:nth-child(3) .skillsBlock{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+
+}
+
+main > section:nth-child(3) .headerBlock{
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    position: relative;
+}
+main > section:nth-child(3) .headerBlock > h2{
+    position: relative;
+}
+main > section:nth-child(3) .headerBlock > h2::before{
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    width: 4%;
+    height: 5px;
+    background-color: aquamarine;
+}
+
+main > section:nth-child(3) .skillsBlock .SkillsBox{
+    width: 45%;
+    height: 40px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    box-shadow: 1px 1px 1px #484848;
+}
+
+main > section:nth-child(3) .skillsBlock .SkillsBox.active{
+    height: 100px;
+}
+
+
+main > section:nth-child(3) .skillsBlock .SkillsBox .nameBlock{
+    width: 100%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+main > section:nth-child(3) .skillsBlock .SkillsBox .nameBlock>button{
+    padding: 5px;
+    background: none;
+    background-color: #ccc;
+    transition: all 0.5s ease;
+    border: none;
+    cursor: pointer;
+}
+
+main > section:nth-child(3) .skillsBlock .SkillsBox .nameBlock>button>i{
+    transition: all 0.5s ease;
+}
+main > section:nth-child(3) .skillsBlock .SkillsBox .nameBlock>button.active {
+    background-color: #000;
+    color: #ccc;
+}
+main > section:nth-child(3) .skillsBlock .SkillsBox .nameBlock>button.active i{
+    transform: rotate(180deg);
+}
+
+main > section:nth-child(3) .skillsBlock .SkillsBox .progress_line{
+    height: 10px;
+}
+
+main > section:nth-child(3) .skillsBlock .SkillsBox .progress_1{
+    background-color: rgb(93, 87, 87);
+    width: 100%;
+}
+
+main > section:nth-child(3) .skillsBlock .SkillsBox .progress_2{
+    background-color: rgb(93, 87, 87);
+    width: 95%;
+}
+main > section:nth-child(3) .skillsBlock .SkillsBox .progress_3{
+    background-color: rgb(93, 87, 87);
+    width: 85%;
+}
+main > section:nth-child(3) .skillsBlock .SkillsBox .progress_4{
+    background-color: rgb(93, 87, 87);
+    width: 85%;
+}
+main > section:nth-child(3) .skillsBlock .SkillsBox .progress_5{
+    background-color: rgb(93, 87, 87);
+    width: 75%;
+}
+main > section:nth-child(3) .skillsBlock .SkillsBox .progress_6{
+    background-color: rgb(93, 87, 87);
+    width: 75%;
+}
+main > section:nth-child(3) .skillsBlock .SkillsBox .progress_7{
+    background-color: rgb(93, 87, 87);
+    width: 70%;
+}
+main > section:nth-child(3) .skillsBlock .SkillsBox .progress_8{
+    background-color: rgb(93, 87, 87);
+    width: 70%;
+}
+main > section:nth-child(3) .skillsBlock .SkillsBox .progress_9{
+    background-color: rgb(93, 87, 87);
+    width: 80%;
+}
+main > section:nth-child(3) .skillsBlock .SkillsBox .progress_10{
+    background-color: rgb(93, 87, 87);
+    width: 70%;
+}
+main > section:nth-child(3) .skillsBlock .SkillsBox .progress_11{
+    background-color: rgb(93, 87, 87);
+    width: 70%;
+}
+main > section:nth-child(3) .skillsBlock .SkillsBox .progress_12{
+    background-color: rgb(93, 87, 87);
+    width: 70%;
+}
+
+
+main > section:nth-child(4){
+    padding: 15px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start ;
+}
+
+main > section:nth-child(4) .headerBlock{
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    position: relative;
+}
+
+main > section:nth-child(4) .headerBlock > h2::before{
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    width: 4%;
+    height: 5px;
+    background-color: aquamarine;
+}
+
+main > section:nth-child(5){
+    background-color: #f4fafd;
+    padding: 15px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start ;
+    height: 800px;
+}
+
+
+main > section:nth-child(5) .headerBlock{
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    position: relative;
+}
+
+main > section:nth-child(5) .headerBlock > h2::before{
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    width: 4%;
+    height: 5px;
+    background-color: aquamarine;
+}
+
+
+main > section:nth-child(5) .twiceBlock{
+    width: 100%;
+    height: auto;
+   
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 45px;
+}
+
+main > section:nth-child(5) .twiceBlock .leftBlock{
+    background-color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+main > section:nth-child(5) .twiceBlock .leftBlock .addressBlock{
+display: flex;
+justify-content: center;
+align-items: flex-start;
+flex-direction: column;
+}
+
+main > section:nth-child(5) .twiceBlock .leftBlock .addressBlock .block{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+main > section:nth-child(5) .twiceBlock .leftBlock .addressBlock .block .iconBlock{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 50%;
+    background-color: #f4fafd;
+    color: #43bfec;
+    transition: all 0.5s ease;
+}
+
+main > section:nth-child(5) .twiceBlock .leftBlock .addressBlock .block:hover .iconBlock{
+    color: #fff;
+    background-color: #43bfec;
+}
+
+
+main > section:nth-child(5) .twiceBlock .rightBlock {
+    width: 45%;
+    height: 600px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: #fff;
+    padding: 15px;
+    
+}
+
+main > section:nth-child(5) .twiceBlock .rightBlock .formBlock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main > section:nth-child(5) .twiceBlock .rightBlock .formBlock>form >button{
+    width: 150px;
+    margin-top: 42px;
+}
+
+main > section:nth-child(5) .twiceBlock .rightBlock .formBlock>form .inputBox{
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+main > section:nth-child(5) .twiceBlock .rightBlock .formBlock>form .areaBox{
+    height: 250px;
+}
+
+
+
+@media screen and (max-width:1024px) {
+    header{
+        left: -150%;
+        z-index: 1;
+    }
+    .navBtn{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    main{
+        width: 100%;
+        transform: translateX(0)
+    }
+
+    main>section{
+        width: 100%;
+        
+       
+    }
+    main > section:nth-child(1){
+        width: 100%;
+    }
+main > section:nth-child(2){
+    height: 100%;
+}
+    main > section:nth-child(2) .contentBlocks{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    main > section:nth-child(2) .contentBlocks .twiceBlock{
+        flex-direction: column;
+    }
+
+ 
+}
+
+
+@media screen and (max-width: 840px) {
+
+
+    main > section:nth-child(5) .headerBlock{
+        text-align: center;
+    }
+
+    main > section:nth-child(5){
+        height: auto;
+    }
+    main > section:nth-child(5) .twiceBlock {
+        flex-direction: column;
+        align-items: center;
+    
+    }
+
+
+    main > section:nth-child(3){
+        height: auto;
+    }
+    main > section:nth-child(3) .headerBlock{
+        text-align: center;
+    }
+
+    main > section:nth-child(3) .skillsBlock{
+        flex-direction: column;
+      align-items: center;
+    }
+    main > section:nth-child(4) .headerBlock{
+        text-align: center;
+    }
+    main > section:nth-child(4){
+        align-items: center;
+    }
+    
+}
