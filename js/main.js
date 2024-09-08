@@ -17,6 +17,8 @@ linkBtn.forEach((button)=>{
 
 const toggle = document.querySelector(".toggle")
 const circle = document.querySelector(".circle")
+const header = document.querySelector("header")
+const section = document.querySelectorAll("section")
 const LS = localStorage
 
 toggle.addEventListener("click",()=>{
@@ -33,8 +35,17 @@ toggle.addEventListener("click",()=>{
 function actionToggleButton(){
 if (LS.getItem("mood") === "light") {
     circle.classList.add("light")
+    header.classList.add("light")
+    section.forEach((item)=>{
+        item.classList.add("light")
+    })
+
 }else{
-    circle.classList.remove("light")
+    circle.classList.remove("light");
+    header.classList.remove("light")
+    section.forEach((item)=>{
+        item.classList.remove("light")
+    })
 }
 }
 
@@ -63,7 +74,7 @@ toggleBtn.forEach((button,index)=>{
 
 const navBtn = document.querySelector(".navBtn")
 const slider = document.querySelector(".slider")
-const header = document.querySelector("header")
+
 
 navBtn.addEventListener("click",()=>{
     slider.classList.toggle("open")
